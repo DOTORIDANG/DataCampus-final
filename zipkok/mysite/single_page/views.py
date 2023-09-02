@@ -841,8 +841,8 @@ import math
 
 #한글 설정
 def plt_korean(default=0):
-    korean_font_path = 'C:/Windows/Fonts/malgun.ttf'
-    plt.rcParams['font.family'] = 'Malgun Gothic'
+    korean_font_path = '/usr/share/fonts/truetype/nanum/NanumGothic.ttf'
+    plt.rcParams['font.family'] = 'NanumGothic'
     plt.rcParams['font.size'] = 8
     plt.rcParams['axes.unicode_minus'] = False
 #색함수
