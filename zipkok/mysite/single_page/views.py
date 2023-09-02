@@ -198,7 +198,7 @@ def final_page(request):
         num = request.POST.get('num') # 필터링 후 남은 우편번호 개수 확인용
         print(num)
         # api키 입력
-        api_key = "iTpxQSDAFV2XVvYIPks3o5ToaIN1C3287ejef64l" 
+        api_key = "fpPHicMCpx4svMoiEcze564UOYLBr7s78jy5DbBN" 
         
         zip_code_list = list(new_db.keys()) # final_recommend에 들어가는 우편번호의 리스트
 

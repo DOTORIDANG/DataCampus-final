@@ -79,6 +79,8 @@
                 flex-direction: row;
                 align-items: center;
                 margin-bottom: 80px;
+                overflow-x: auto; /* 가로 스크롤바 표시 */
+                white-space: nowrap; /* 텍스트 줄 바꿈 비활성화 */
             }
             #toggleButton {
                 color: black; /* 텍스트 색상을 검정색으로 설정합니다. */
@@ -156,32 +158,31 @@
                                 
                             </ul>
                             <div><button class="button1" onclick="window.open('real_estate', 'image_window', 'width=800,height=480,location=no,status=no,scrollbars=yes');">주변부동산정보보기</button></div>
-                            <div class="container">
-                                <div>
-                                  <button id="toggleButton" data-target="{{ key3 }}" class="btn btn-primary">상세정보보기</button>
-                                </div>
-                                <div class="info-list-2" data-key="{{key3}}">
-                                  <div id="avg_area_{{ key3 }}" class="section">
+                            
+                            <div><button id="toggleButton" data-target="{{ key3 }}">상세정보보기</button></div>
+                            <br>
+                            <div class ="info-list-2" data-key="{{key3}}">
+                            
+                                <div id="avg_area_{{ key3 }}" class="col-sm-3 section">
                                     <h3>평균가격</h3>
-                                    <img src="{{value3.cost}}" alt="{{key3}}">
-                                  </div>
-                                  <div id="avg_cost_{{ key3 }}" class="section">
+                                    <img src="{{value3.cost}}"alt="{{key3}}">   
+                                </div>
+                                <div id="avg_cost_{{ key3 }}" class="col-sm-3 section">
                                     <h3>평균면적</h3>
                                     <img src="{{value3.size}}" alt="{{key3}}">
-                                  </div>
-                                  <div id="avg_year_{{ key3 }}" class="section">
+                                </div>
+                                <div id="avg_area_{{ key3 }}" class="col-sm-3 section">
                                     <h3>평균건축년도</h3>
                                     <img src="{{value3.year}}" alt="{{key3}}">
-                                  </div>
-                                  <div id="avg_cost_diff_{{ key3 }}" class="section">
+                                </div>
+                                <div id="avg_cost_diff_{{ key3 }}" class ="col-sm-3 section">
                                     <h3>주택 유형 평균 비율</h3>
                                     <img src="{{value3.ratio}}" alt="{{key3}}">
-                                  </div>
                                 </div>
-                              </div>
+
                             </div>
                             <div class = "map-container">
-                                <div class="map">{{value.map | safe}}</div>
+                                <div class="map">{{value2.map2 | safe}}</div>
                                 <div class="map">{{value2.map2 | safe}}</div>
                             </div>            
                         </div>        
@@ -189,14 +190,21 @@
                 {% endfor %}
             {% endfor %}
         {% endfor %}
-    <footer class="footer-fixed" style="background-color: rgb(64, 154, 206); color: #ffffff">
-        <div class="container">
-            <br>
-            <div class="row">
-                <div class="col-sm-2" style="text-align: center;"><h5>Copyright &copy; 2023</h5><h5>Orara..?</h5></div>
+        <footer class="footer-fixed" style="background-color: rgb(64, 154, 206); color: #ffffff">
+            <div class="container">
+                <br>
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h5>Copyright &copy; 2023</h5>
+                        <h5>Orara..?</h5>
+                        
+                        <form method="get" action="http://funfungun.shop:8005">
+                            <button type="submit" style="background-color: #ffffff; color: rgb(64, 154, 206); border: none; padding: 8px 16px; cursor: pointer; border-radius: 4px; margin-top: 10px;">홈으로</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="{% static 'bootstrap.js' %}"></script>
         <script>
@@ -237,5 +245,3 @@
         </script>                
     </body>
 </html>
-
-
