@@ -78,7 +78,7 @@
                 display:flex;
                 flex-direction: row;
                 align-items: center;
-                margin-bottom: 30px;
+                margin-bottom: 80px;
             }
             #toggleButton {
                 color: black; /* 텍스트 색상을 검정색으로 설정합니다. */
@@ -126,6 +126,7 @@
                     {% if key == key2 and key2 == key3 %}
                         
                         <div class="info-map-container">
+                            <bh>
                             <ul class="info-list">   
                                 <li><h3><b>추천우편번호 : {{key}}</b></h3></li>
                                 <li>주소 : {{value.city_gu}} {{value.admin_dong}}</li>
@@ -160,7 +161,6 @@
                                 <div>
                                   <button id="toggleButton" data-target="{{ key3 }}" class="btn btn-primary">상세정보보기</button>
                                 </div>
-                                <br>
                                 <div class="info-list-2" data-key="{{key3}}">
                                   <div id="avg_area_{{ key3 }}" class="section">
                                     <h3>평균가격</h3>
@@ -180,7 +180,7 @@
                                   </div>
                                 </div>
                               </div>
-
+                            <hr>
                             </div>
                             <div class = "map-container">
                                 <div class="map">{{value.map | safe}}</div>
