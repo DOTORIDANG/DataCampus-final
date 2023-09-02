@@ -845,6 +845,8 @@ def plt_korean(default=0):
     plt.rcParams['font.family'] = 'NanumGothic'
     plt.rcParams['font.size'] = 8
     plt.rcParams['axes.unicode_minus'] = False
+
+plt_korean()
 #색함수
 def graphbar_color(default=0):
     result={'total':'#bdc1c4',0:'#5c96bb',1:'#7db781',2:'#f1c277','boundary':'#86b3b3','zip':'#257e7e'}
