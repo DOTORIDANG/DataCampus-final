@@ -885,10 +885,10 @@ def draw_graph(zip_code_dict):
 
                 for j in range(len(x)):
                     if j == len(x)-1:
-                        plt.text(x[j], y[j] + y[(len(y)-1)]*0.02, str(np.round(y[j],2)) + f'{naming[graph][1]}',
+                        plt.text(x[j], y[j] + y[(len(y)-1)]*0.02, str(np.round(y[j],1)) + f'{naming[graph][1]}',
                                  ha='center', fontsize=13, color=color[j], weight='bold')
                     else:
-                        plt.text(x[j], y[j] + y[(len(y)-1)]*0.02, str(np.round(y[j],2)) + f'{naming[graph][1]}',
+                        plt.text(x[j], y[j] + y[(len(y)-1)]*0.02, str(np.round(y[j],1)) + f'{naming[graph][1]}',
                                  ha='center', fontsize=13, color=color[j])
 
             elif i == 2:
@@ -906,7 +906,7 @@ def draw_graph(zip_code_dict):
                 for j in range(len(x)):
                     girl, day = divmod(y[j], 1)
                     girl = int(girl)
-                    if day == 0:
+                    if (day==0)|(day <= 0.1):
                         day = 0.15
 
                     if j == 0:
