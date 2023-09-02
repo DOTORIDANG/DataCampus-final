@@ -1,0 +1,52 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'homes.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1">
+        <title>집! 콕!</title>
+    </head>
+    <style>
+        body {
+        background-image: url('static/homes.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    </style>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">메인화면</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-center">
+                        <li><a href="#">지역/금액 선택<span class="sr-only"></span></a></li>
+                        <li><a href="#">인접시설 선택</a></li>
+                        <li><a href="#">세부사항 입력</a></li>
+                        <li><a href="#">결과 확인</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <p><a class="btn btn-default btn-lg" href="check_and_filter/">시작하기</a></p>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="{% static 'bootstrap.js' %}"></script>
+    </body>
+</html>
