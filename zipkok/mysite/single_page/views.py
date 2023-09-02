@@ -198,13 +198,13 @@ def final_page(request):
         num = request.POST.get('num') # 필터링 후 남은 우편번호 개수 확인용
         print(num)
         # api키 입력
-        api_key = "e8wHh2tya84M88aReEpXCa5XTQf3xgo01aZG39k5" 
+        api_key = "jWKJB0EUmw8Bq7MWSEdBR9CHS1MXzX6j9q5wZ5Mv" 
         
         zip_code_list = list(new_db.keys()) # final_recommend에 들어가는 우편번호의 리스트
 
-        # result_2 : final_recommend 함수를 통해 해당 우편번호에서 목적지까지의 경로 및 우편번호의 대략적인 정보 제공       
-        #result_2 = final_recommend(new_db,zip_code_list,destination,limit_time, transfer_count, pathtype,api_key)
-        result_2 = {'03633': {'city_gu': '서울특별시 서대문구','admin_dong': '홍제2동','legal_dong': '홍제동','totalTime': 18,'walk_sum': 4,'bus_sum': 11,'subway_sum': 3,'pathType': 2,'avg_cost':9000}}
+        #result_2 : final_recommend 함수를 통해 해당 우편번호에서 목적지까지의 경로 및 우편번호의 대략적인 정보 제공       
+        result_2 = final_recommend(new_db,zip_code_list,destination,limit_time, transfer_count, pathtype,api_key)
+        #result_2 = {'03633': {'city_gu': '서울특별시 서대문구','admin_dong': '홍제2동','legal_dong': '홍제동','totalTime': 18,'walk_sum': 4,'bus_sum': 11,'subway_sum': 3,'pathType': 2,'avg_cost':9000}}
 
         # result_3 : facility_map 함수를 통해 해당 우편번호 500m 반경 위치하는 카테고리들의 정보를 지도로 제공
         result_3 = facility_map(new_fac,selected_items)
